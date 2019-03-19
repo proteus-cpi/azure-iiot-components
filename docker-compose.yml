@@ -147,8 +147,8 @@ services:
       - REACT_APP_PCS_WEBUI_AUTH_AAD_APPID
       - REACT_APP_PCS_WEBUI_AUTH_AAD_AUTHORITY
       - REACT_APP_PCS_WEBUI_AUTH_AAD_TENANT
-      - REACT_APP_PCS_TWIN_REGISTRY_URL=http://twinregistry:9042
-      - REACT_APP_PCS_TWIN_SERVICE_URL=http://twinservice:9041
+      - REACT_APP_PCS_TWIN_REGISTRY_URL=http://localhost:10080/registry
+      - REACT_APP_PCS_TWIN_SERVICE_URL=http://localhost:10080/twin
   twinmodule:
     image: ${REPOSITORY:-localhost:5000/azure-iiot-}opc-twin:host-${IMAGE_VERSION:-latest}
     build: ./modules/opc-twin
