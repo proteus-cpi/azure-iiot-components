@@ -10,7 +10,7 @@ The discovery interface allows for **recurring** as well as **one-time** scans.
 
 ### Configuration
 
-The Discovery process can involve active network and port scanning.  Scanning can be finely configured, e.g. specifiying
+The Discovery process can involve active network and port scanning.  Scanning can be finely configured, e.g. specifying
 
 - address ranges (needed when hosted in a docker context where the host interfaces are not visible)
 - port ranges (to narrow or widen scanning to a list of known ports)

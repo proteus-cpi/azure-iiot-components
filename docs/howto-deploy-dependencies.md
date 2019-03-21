@@ -25,7 +25,7 @@ This article explains how to deploy only the Azure Platform Services need to do 
 
 Ensure you use a short and simple resource group name.  The name is used also to name resources as such it must comply with resource naming requirements.  
 
-### Azure Active Directory (AAD) Registration 
+### Azure Active Directory (AAD) Registration
 
 The deployment script tries to register AAD applications in Azure Active Directory.  Depending on your rights to the selected AAD tenant, this might fail.   There are 3 options:
 
@@ -39,4 +39,3 @@ Now that you have successfully deployed OPC Device Management services to an exi
 
 - [Run the Industrial IoT modules locally](howto-deploy-modules.md)
 - [Learn about the OPC Device Management dependencies](twin/dependencies.md)
-

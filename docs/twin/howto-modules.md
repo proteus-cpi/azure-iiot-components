@@ -200,7 +200,7 @@ For trouble shooting and debugging it is useful to run the Edge modules locally 
 
 **Please make sure there is no Azure IoT Edge runtime running on the same machine with iotedgehubdev since they require the same ports.**
 
-### Quickstart
+### Quick start
 
 1. Follow the instructions to [create a Edge Device in the Azure Portal](https://docs.microsoft.com/en-us/azure/iot-edge/how-to-register-device-portal).  Copy the edge device connection string.
 
