@@ -7,16 +7,23 @@ This article explains how to deploy the Industrial IoT Services in Azure.
 > [!NOTE]
 > Note: Due the dependency on the AzureRM module, deployment currently is only supported on Windows.  We will add support for Linux soon.
 
-Make sure you have PowerShell and [Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-1.1.0) extensions installed.   If you have not done so yet, clone this GitHub repository.  Open a command prompt or terminal and run:
+1. Make sure you have PowerShell and [Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-1.1.0) extensions installed.  If not, first install PowerShell, then open PowerShell as Administrator and run
 
-```bash
-git clone --recursive https://github.com/Azure/azure-iiot-components 
-cd azure-iiot-components
-```
+   ```powershell
+   Install-Module -Name AzureRM -AllowClobber
+   Install-Module -Name AzureAD -AllowClobber
+   ```
+
+2. If you have not done so yet, clone this GitHub repository.  Open a command prompt or terminal and run:
+
+   ```bash
+   git clone --recursive https://github.com/Azure/azure-iiot-components 
+   cd azure-iiot-components
+   ```
 
 ## Deploy Industrial IoT Services to Azure
 
-1. On the open command prompt or terminal run:
+1. Open a command prompt or terminal in the repository root and run:
 
    ```bash
    deploy
@@ -26,7 +33,9 @@ cd azure-iiot-components
 
    ![Deployment Result](media/deployment1.png)
 
-   The output includes the  URL of the public endpoint.  In case you run into issues please follow the steps [below](#Troubleshooting-deployment-failures).
+   The output includes the  URL of the public endpoint.  
+
+   In case you run into issues please follow the steps [below](#Troubleshooting-deployment-failures).
 
 3. Once the script completes successfully, select whether you want to save the .env file.  You need the .env environment file if you want to connect to the cloud endpoint using tools such as the [Console](twin/howto-use-cli.md) or [deploy modules](howto-deploy-modules.md) for development and debugging.
 
@@ -63,7 +72,7 @@ Instead of just the services and dependencies you can also deploy an all-in-one 
 
 ## Deployment script options
 
-The script takes the following parameters:
+To support automation scenarios, the script takes the following parameters:
 
 ```bash
 -type

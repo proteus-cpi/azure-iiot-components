@@ -2,14 +2,28 @@
 
 This article explains how to deploy only the Azure Platform Services need to do local development and debugging.   At the end you will have a resource group deployed that contains everything you need for local development and debugging.
 
-## Deploy Azure Platform Services
+## Prerequisites
 
-1. Make sure you have PowerShell and [Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-1.1.0) extensions installed (Linux support is coming soon).  Open a command prompt or terminal and run:
+> [!NOTE]
+> Note: Due the dependency on the AzureRM module, deployment currently is only supported on Windows.  We will add support for Linux soon.
+
+1. Make sure you have PowerShell and [Azure PowerShell](https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-1.1.0) extensions installed.  If not, first install PowerShell, then open PowerShell as Administrator and run
+
+   ```powershell
+   Install-Module -Name AzureRM -AllowClobber
+   Install-Module -Name AzureAD -AllowClobber
+   ```
+
+2. If you have not done so yet, clone this GitHub repository.  Open a command prompt or terminal and run:
 
    ```bash
-   git clone https://github.com/Azure/azure-iiot-components
+   git clone --recursive https://github.com/Azure/azure-iiot-components 
    cd azure-iiot-components
    ```
+
+## Deploy Azure Platform Services
+
+1. Open a command prompt or terminal in the repository root and run:
 
    ```bash
    deploy -type local
