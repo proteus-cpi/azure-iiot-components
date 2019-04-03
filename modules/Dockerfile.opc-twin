@@ -1,0 +1,18 @@
+FROM microsoft/dotnet:2.1-sdk AS build
+WORKDIR /src
+COPY . .
+RUN dotnet restore --configfile NuGet.Config -nowarn:msb3202,nu1503 azure-iiot-components.sln
+RUN dotnet build azure-iiot-components.sln -c Debug -o /app
+
+FROM build AS publish
+RUN dotnet publish azure-iiot-components.sln -c Debug -o /app
+
+FROM build AS final
+WORKDIR /app
+COPY --from=publish /app .
+
+RUN apt-get update && apt-get install -y unzip \
+	&& curl -sSL https://aka.ms/getvsdbgsh | bash /dev/stdin -v latest -l ~/vsdbg
+ENV PATH="${PATH}:/root/vsdbg/vsdbg"
+
+ENTRYPOINT ["dotnet", "Microsoft.Azure.IIoT.Modules.OpcUa.Twin.dll"]
