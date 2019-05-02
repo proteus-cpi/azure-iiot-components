@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.IIoT.OpcUa.Testing", "components\opc-ua\src\Microsoft.Azure.IIoT.OpcUa.Testing\src\Microsoft.Azure.IIoT.OpcUa.Testing.csproj", "{C2F3B451-2971-4D8F-AAA2-8481A251AA3F}"
 EndProject
@@ -183,6 +183,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.IIoT.Services.OpcUa.Vault", "services\src\Microsoft.Azure.IIoT.Services.OpcUa.Vault\src\Microsoft.Azure.IIoT.Services.OpcUa.Vault.csproj", "{039B213A-5930-475D-B3C0-FA15AF6CD631}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.IIoT.Services.OpcUa.Vault.Tests", "services\src\Microsoft.Azure.IIoT.Services.OpcUa.Vault\tests\Microsoft.Azure.IIoT.Services.OpcUa.Vault.Tests.csproj", "{91DE59BF-D3D9-4A86-A767-E33DDBB61476}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.IIoT.OpcUa.Api.Vault", "api\src\Microsoft.Azure.IIoT.OpcUa.Api.Vault\src\Microsoft.Azure.IIoT.OpcUa.Api.Vault.csproj", "{7137B8E7-A508-4917-A6FC-9CB5CCF8F9EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -605,6 +611,24 @@ Global
 		{BD9D39DA-81EC-4377-B9FB-036ADA544E7E}.Develop|Any CPU.Build.0 = Debug|Any CPU
 		{BD9D39DA-81EC-4377-B9FB-036ADA544E7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD9D39DA-81EC-4377-B9FB-036ADA544E7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{039B213A-5930-475D-B3C0-FA15AF6CD631}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{039B213A-5930-475D-B3C0-FA15AF6CD631}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{039B213A-5930-475D-B3C0-FA15AF6CD631}.Develop|Any CPU.ActiveCfg = Debug|Any CPU
+		{039B213A-5930-475D-B3C0-FA15AF6CD631}.Develop|Any CPU.Build.0 = Debug|Any CPU
+		{039B213A-5930-475D-B3C0-FA15AF6CD631}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{039B213A-5930-475D-B3C0-FA15AF6CD631}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91DE59BF-D3D9-4A86-A767-E33DDBB61476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91DE59BF-D3D9-4A86-A767-E33DDBB61476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91DE59BF-D3D9-4A86-A767-E33DDBB61476}.Develop|Any CPU.ActiveCfg = Debug|Any CPU
+		{91DE59BF-D3D9-4A86-A767-E33DDBB61476}.Develop|Any CPU.Build.0 = Debug|Any CPU
+		{91DE59BF-D3D9-4A86-A767-E33DDBB61476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91DE59BF-D3D9-4A86-A767-E33DDBB61476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7137B8E7-A508-4917-A6FC-9CB5CCF8F9EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7137B8E7-A508-4917-A6FC-9CB5CCF8F9EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7137B8E7-A508-4917-A6FC-9CB5CCF8F9EA}.Develop|Any CPU.ActiveCfg = Debug|Any CPU
+		{7137B8E7-A508-4917-A6FC-9CB5CCF8F9EA}.Develop|Any CPU.Build.0 = Debug|Any CPU
+		{7137B8E7-A508-4917-A6FC-9CB5CCF8F9EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7137B8E7-A508-4917-A6FC-9CB5CCF8F9EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -693,6 +717,9 @@ Global
 		{18426423-8BC9-4661-AEA2-DB41C3E88D6E} = {3E7A79D5-045F-49D0-BD29-46D4F2D62E52}
 		{63BF7A67-E422-4EB5-B2B1-77E23F46F63B} = {3A2DB744-69F3-488E-8CD5-45B921385B76}
 		{BD9D39DA-81EC-4377-B9FB-036ADA544E7E} = {43E69B85-2743-48EE-8FAE-A59F070E21D2}
+		{039B213A-5930-475D-B3C0-FA15AF6CD631} = {ADB416A3-C375-4362-B2C0-3A35DA4CB5F8}
+		{91DE59BF-D3D9-4A86-A767-E33DDBB61476} = {3E7A79D5-045F-49D0-BD29-46D4F2D62E52}
+		{7137B8E7-A508-4917-A6FC-9CB5CCF8F9EA} = {AFBD4A17-2EB1-421C-BB0C-407C875F3F50}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F09EFCEA-59F6-4A16-9CB6-7E865A3F62D8}
