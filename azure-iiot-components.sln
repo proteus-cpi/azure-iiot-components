@@ -190,7 +190,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.IIoT.Servic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.IIoT.OpcUa.Api.Vault", "api\src\Microsoft.Azure.IIoT.OpcUa.Api.Vault\src\Microsoft.Azure.IIoT.OpcUa.Api.Vault.csproj", "{7137B8E7-A508-4917-A6FC-9CB5CCF8F9EA}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.IIoT.Modules.OpcUa.Vault", "modules\opc-gds\src\Microsoft.Azure.IIoT.Modules.OpcUa.Vault.csproj", "{4F885A03-FBB0-4748-B065-2168FC8856EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.IIoT.Modules.OpcUa.Gds", "modules\opc-gds\src\Microsoft.Azure.IIoT.Modules.OpcUa.Gds.csproj", "{4F885A03-FBB0-4748-B065-2168FC8856EB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{06B96576-BAB1-4571-A08F-B6CC64F1B4F9}"
 EndProject

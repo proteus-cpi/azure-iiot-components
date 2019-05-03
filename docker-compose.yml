@@ -22,6 +22,7 @@ services:
       - "9042:9042"
     restart: always
     environment:
+      - PCS_KEYVAULT_CONFIGURATION_URI
       - PCS_IOTHUB_CONNSTRING
       - PCS_TELEMETRY_DOCUMENTDB_CONNSTRING
       - PCS_AUTH_REQUIRED
@@ -38,6 +39,7 @@ services:
       dockerfile: ./src/Microsoft.Azure.IIoT.Services.OpcUa.Onboarding/docker/Dockerfile
     restart: always
     environment:
+      - PCS_KEYVAULT_CONFIGURATION_URI
       - PCS_IOTHUB_CONNSTRING
       - PCS_IOTHUBREACT_HUB_ENDPOINT
       - PCS_IOTHUBREACT_HUB_PARTITIONS
@@ -55,6 +57,7 @@ services:
     ports:
       - "9041:9041"
     environment:
+      - PCS_KEYVAULT_CONFIGURATION_URI
       - PCS_IOTHUB_CONNSTRING
       - PCS_TELEMETRY_DOCUMENTDB_CONNSTRING
       - PCS_AUTH_REQUIRED
@@ -73,6 +76,7 @@ services:
     ports:
       - "9043:9043"
     environment:
+      - PCS_KEYVAULT_CONFIGURATION_URI
       - PCS_IOTHUB_CONNSTRING
       - PCS_TELEMETRY_DOCUMENTDB_CONNSTRING
       - PCS_AUTH_REQUIRED
@@ -92,6 +96,7 @@ services:
       - "51111:51111"
     restart: always
     environment:
+      - PCS_KEYVAULT_CONFIGURATION_URI
       - PCS_IOTHUB_CONNSTRING
       - PCS_TELEMETRY_DOCUMENTDB_CONNSTRING
       - PCS_AUTH_REQUIRED
@@ -108,6 +113,7 @@ services:
       dockerfile: ./src/Microsoft.Azure.IIoT.Services.OpcUa.Processor/docker/Dockerfile
     restart: always
     environment:
+      - PCS_KEYVAULT_CONFIGURATION_URI
       - PCS_TELEMETRY_DOCUMENTDB_CONNSTRING
       - PCS_IOTHUB_CONNSTRING
       - PCS_IOTHUBREACT_HUB_ENDPOINT
@@ -124,6 +130,7 @@ services:
       dockerfile: ./src/Microsoft.Azure.IIoT.Services.Notification.Blob/docker/Dockerfile
     restart: always
     environment:
+      - PCS_KEYVAULT_CONFIGURATION_URI
       - PCS_IOTHUB_CONNSTRING
       - PCS_IOTHUBREACT_HUB_ENDPOINT
       - PCS_IOTHUBREACT_HUB_PARTITIONS
@@ -156,8 +163,12 @@ services:
       dockerfile: ./src/Microsoft.Azure.IIoT.Services.OpcUa.Vault/docker/Dockerfile
     restart: always
     ports:
-      - "9041:9041"
+      - "58801:58801"
     environment:
+      - PCS_KEYVAULT_CONFIGURATION_URI
+      - OPC_VAULT_KEYVAULT_RESOURCE_ID
+      - OPC_VAULT_KEYVAULT_URI
+      - OPC_VAULT_COSMOSDB_CONNSTRING
       - PCS_IOTHUB_CONNSTRING
       - PCS_TELEMETRY_DOCUMENTDB_CONNSTRING
       - PCS_AUTH_REQUIRED
@@ -172,23 +183,32 @@ services:
     build: ./samples/opc-vault-webui
     restart: always
     ports:
-      - "9041:9041"
+      - "56310:80"
     environment:
-      - PCS_IOTHUB_CONNSTRING
-      - PCS_TELEMETRY_DOCUMENTDB_CONNSTRING
-      - PCS_AUTH_REQUIRED
-      - PCS_AUTH_ISSUER
-      - PCS_AUTH_AUDIENCE
-      - PCS_WEBUI_AUTH_AAD_APPID
-      - PCS_WEBUI_AUTH_AAD_AUTHORITY
-      - PCS_WEBUI_AUTH_AAD_TENANT
-      - PCS_CORS_WHITELIST
+      - PCS_KEYVAULT_CONFIGURATION_URI
+      - REACT_APP_PCS_AUTH_REQUIRED
+      - REACT_APP_PCS_AUTH_ISSUER
+      - REACT_APP_PCS_AUTH_AUDIENCE
+      - REACT_APP_PCS_WEBUI_AUTH_AAD_APPID
+      - REACT_APP_PCS_WEBUI_AUTH_AAD_AUTHORITY
+      - REACT_APP_PCS_WEBUI_AUTH_AAD_TENANT
+      - KEYVAULT=${PCS_KEYVAULT_URI}
+      - AZUREAD__CLIENTID=${REACT_APP_PCS_WEBUI_AUTH_AAD_APPID}
+      - AZUREAD__INSTANCE=${PCS_WEBUI_AUTH_AAD_AUTHORITY}
+      - AZUREAD__TENANTID=${PCS_WEBUI_AUTH_AAD_TENANT}
+      - OPCVAULT__BASEADDRESS=http://localhost:10080/vault
+      - OPCVAULT__RESOURCEID=${PCS_WEBUI_AUTH_AAD_APPID}
   gdsmodule:
     image: ${REPOSITORY:-localhost:5000/azure-iiot-}opc-gds:host-${IMAGE_VERSION:-latest}
     build: 
       context: ./modules/opc-gds
       dockerfile: ./docker/linux/amd64/Dockerfile
+    ports:
+      - "58850-58852:58850-58852"
     restart: always
+    environment:
+      - _HUB_CS
+    command: --aa
   twinmodule:
     image: ${REPOSITORY:-localhost:5000/azure-iiot-}opc-twin:host-${IMAGE_VERSION:-latest}
     build: ./modules/opc-twin
@@ -197,6 +217,7 @@ services:
     cap_add:
       - NET_ADMIN
     environment:
+      - PCS_KEYVAULT_CONFIGURATION_URI
       - PCS_IOTHUB_CONNSTRING
   publishermodule:
     image: ${REPOSITORY:-localhost:5000/azure-iiot-}opc-publisher:${IMAGE_VERSION:-latest}
@@ -238,6 +259,7 @@ services:
     build: ./api
     command: exit
     environment:
+      - PCS_KEYVAULT_CONFIGURATION_URI
       - PCS_TWIN_REGISTRY_URL=http://twinregistry:9042
       - PCS_TWIN_SERVICE_URL=http://twinservice:9041
       - PCS_WEBUI_AUTH_AAD_APPID
