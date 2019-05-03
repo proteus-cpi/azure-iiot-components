@@ -149,6 +149,46 @@ services:
       - REACT_APP_PCS_WEBUI_AUTH_AAD_TENANT
       - REACT_APP_PCS_TWIN_REGISTRY_URL=http://localhost:10080/registry
       - REACT_APP_PCS_TWIN_SERVICE_URL=http://localhost:10080/twin
+  vaultservice:
+    image: ${REPOSITORY:-localhost:5000/azure-iiot-}opc-vault-service:${IMAGE_VERSION:-latest}
+    build: 
+      context: ./services
+      dockerfile: ./src/Microsoft.Azure.IIoT.Services.OpcUa.Vault/docker/Dockerfile
+    restart: always
+    ports:
+      - "9041:9041"
+    environment:
+      - PCS_IOTHUB_CONNSTRING
+      - PCS_TELEMETRY_DOCUMENTDB_CONNSTRING
+      - PCS_AUTH_REQUIRED
+      - PCS_AUTH_ISSUER
+      - PCS_AUTH_AUDIENCE
+      - PCS_WEBUI_AUTH_AAD_APPID
+      - PCS_WEBUI_AUTH_AAD_AUTHORITY
+      - PCS_WEBUI_AUTH_AAD_TENANT
+      - PCS_CORS_WHITELIST
+  vaultwebui:
+    image: ${REPOSITORY:-localhost:5000/azure-iiot-}opc-vault-webui:${IMAGE_VERSION:-latest}
+    build: ./samples/opc-vault-webui
+    restart: always
+    ports:
+      - "9041:9041"
+    environment:
+      - PCS_IOTHUB_CONNSTRING
+      - PCS_TELEMETRY_DOCUMENTDB_CONNSTRING
+      - PCS_AUTH_REQUIRED
+      - PCS_AUTH_ISSUER
+      - PCS_AUTH_AUDIENCE
+      - PCS_WEBUI_AUTH_AAD_APPID
+      - PCS_WEBUI_AUTH_AAD_AUTHORITY
+      - PCS_WEBUI_AUTH_AAD_TENANT
+      - PCS_CORS_WHITELIST
+  gdsmodule:
+    image: ${REPOSITORY:-localhost:5000/azure-iiot-}opc-gds:host-${IMAGE_VERSION:-latest}
+    build: 
+      context: ./modules/opc-gds
+      dockerfile: ./docker/linux/amd64/Dockerfile
+    restart: always
   twinmodule:
     image: ${REPOSITORY:-localhost:5000/azure-iiot-}opc-twin:host-${IMAGE_VERSION:-latest}
     build: ./modules/opc-twin
