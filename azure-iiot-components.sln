@@ -198,6 +198,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FC3527DA-9BB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.IIoT.WebApps.OpcUa.Vault", "samples\opc-vault-webui\src\Microsoft.Azure.IIoT.WebApps.OpcUa.Vault.csproj", "{EE9EC887-1742-4FB7-8462-7292728400F2}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.IIoT.Services.All", "services\src\Microsoft.Azure.IIoT.Services.All\src\Microsoft.Azure.IIoT.Services.All.csproj", "{D2DB7A83-1682-4A01-857F-CE415287ACF0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -649,6 +651,12 @@ Global
 		{EE9EC887-1742-4FB7-8462-7292728400F2}.Develop|Any CPU.Build.0 = Develop|Any CPU
 		{EE9EC887-1742-4FB7-8462-7292728400F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE9EC887-1742-4FB7-8462-7292728400F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D2DB7A83-1682-4A01-857F-CE415287ACF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2DB7A83-1682-4A01-857F-CE415287ACF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D2DB7A83-1682-4A01-857F-CE415287ACF0}.Develop|Any CPU.ActiveCfg = Debug|Any CPU
+		{D2DB7A83-1682-4A01-857F-CE415287ACF0}.Develop|Any CPU.Build.0 = Debug|Any CPU
+		{D2DB7A83-1682-4A01-857F-CE415287ACF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D2DB7A83-1682-4A01-857F-CE415287ACF0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -743,6 +751,7 @@ Global
 		{4F885A03-FBB0-4748-B065-2168FC8856EB} = {3A2DB744-69F3-488E-8CD5-45B921385B76}
 		{FC3527DA-9BBF-4B97-8982-1A83B56B74E8} = {06B96576-BAB1-4571-A08F-B6CC64F1B4F9}
 		{EE9EC887-1742-4FB7-8462-7292728400F2} = {FC3527DA-9BBF-4B97-8982-1A83B56B74E8}
+		{D2DB7A83-1682-4A01-857F-CE415287ACF0} = {ADB416A3-C375-4362-B2C0-3A35DA4CB5F8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F09EFCEA-59F6-4A16-9CB6-7E865A3F62D8}
