@@ -200,6 +200,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.IIoT.WebApp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.IIoT.Services.All", "services\src\Microsoft.Azure.IIoT.Services.All\src\Microsoft.Azure.IIoT.Services.All.csproj", "{D2DB7A83-1682-4A01-857F-CE415287ACF0}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.IIoT.OpcUa.Vault", "components\opc-ua\src\Microsoft.Azure.IIoT.OpcUa.Vault\src\Microsoft.Azure.IIoT.OpcUa.Vault.csproj", "{33575581-15C8-4560-A768-B441D53A088A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Microsoft.Azure.IIoT.OpcUa.Vault.Tests", "components\opc-ua\src\Microsoft.Azure.IIoT.OpcUa.Vault\tests\Microsoft.Azure.IIoT.OpcUa.Vault.Tests.csproj", "{77FB3A10-77AB-49E5-A11D-7AD8E382D201}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -657,6 +661,18 @@ Global
 		{D2DB7A83-1682-4A01-857F-CE415287ACF0}.Develop|Any CPU.Build.0 = Debug|Any CPU
 		{D2DB7A83-1682-4A01-857F-CE415287ACF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2DB7A83-1682-4A01-857F-CE415287ACF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33575581-15C8-4560-A768-B441D53A088A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33575581-15C8-4560-A768-B441D53A088A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33575581-15C8-4560-A768-B441D53A088A}.Develop|Any CPU.ActiveCfg = Debug|Any CPU
+		{33575581-15C8-4560-A768-B441D53A088A}.Develop|Any CPU.Build.0 = Debug|Any CPU
+		{33575581-15C8-4560-A768-B441D53A088A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33575581-15C8-4560-A768-B441D53A088A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{77FB3A10-77AB-49E5-A11D-7AD8E382D201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{77FB3A10-77AB-49E5-A11D-7AD8E382D201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{77FB3A10-77AB-49E5-A11D-7AD8E382D201}.Develop|Any CPU.ActiveCfg = Debug|Any CPU
+		{77FB3A10-77AB-49E5-A11D-7AD8E382D201}.Develop|Any CPU.Build.0 = Debug|Any CPU
+		{77FB3A10-77AB-49E5-A11D-7AD8E382D201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{77FB3A10-77AB-49E5-A11D-7AD8E382D201}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -752,6 +768,8 @@ Global
 		{FC3527DA-9BBF-4B97-8982-1A83B56B74E8} = {06B96576-BAB1-4571-A08F-B6CC64F1B4F9}
 		{EE9EC887-1742-4FB7-8462-7292728400F2} = {FC3527DA-9BBF-4B97-8982-1A83B56B74E8}
 		{D2DB7A83-1682-4A01-857F-CE415287ACF0} = {ADB416A3-C375-4362-B2C0-3A35DA4CB5F8}
+		{33575581-15C8-4560-A768-B441D53A088A} = {A6028EDB-3331-48D2-8C7D-8D681172A61A}
+		{77FB3A10-77AB-49E5-A11D-7AD8E382D201} = {1266F300-8BD2-4F1E-BA88-911F5F3AC36C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F09EFCEA-59F6-4A16-9CB6-7E865A3F62D8}
